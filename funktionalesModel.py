@@ -9,8 +9,6 @@ def lade_csv_daten(pfad):
     # mit 1: den Spaltennamen überspringen
     return zeilen[1:]
 
-
-
 # Funktion für das Aufbereiten der Daten
 # es braucht 5 leere Arrays, für jede Ziffer der 5-Stelligen Postleitzahl eins
 
@@ -48,8 +46,6 @@ def daten_verarbeiten(zeilen):
         y4.append((int(label[3])))
         y5.append((int(label[4])))
 
-
-
     """
     Umbau des Arrays ?????????????
     
@@ -83,8 +79,6 @@ x_test, [yt1, yt2, yt3, yt4, yt5] = daten_verarbeiten(test_zeilen)
 Array-Dimensionen ermitteln und abspeichern
 Datenstruktur analysieren
 """
-
-
 
 """
 Das funktionales Modell erstellen, da das sequential Modell nur einen Output zulässt.
@@ -131,6 +125,4 @@ modell_plz.evaluate(x_test, [yt1, yt2, yt3, yt4, yt5])
 
 # das Modell speichern
 modell_plz.save('postleitzahlen')
-
-
 tf.keras.models.load_model("postleitzahlen")
